@@ -4,11 +4,17 @@ class OrderController
 {
     public function checkout()
     {
+        $orderModel = new OrderModel();
+         $productModel = new ProductModel();
+        $total = 0;
+            foreach ($_SESSION['cart'] as $item) {
+                $product = $productModel->getProductById($item['product_id']);
+                $total += $product['Price'] * $item['quantity'];
+            }
          if (session_status() === PHP_SESSION_NONE) {
             session_start();
          }
-         $orderModel = new OrderModel();
-         $productModel = new ProductModel();
+         
          $orderId = $orderModel->createOrder($_SESSION['user_id'], 0);
          foreach ($_SESSION['cart'] as $item) {
              $product = $productModel->getProductById($item['product_id']);
