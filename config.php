@@ -1,8 +1,8 @@
 <?php
 return array(
-    'base' => 'http://ss21.local/',
-    'assets' => 'http://ss21.local/assets/',
-    'baseURL' => 'http://ss21.local/', 
+    'base' => 'http://mvcshop.local/',
+    'assets' => 'http://mvcshop.local/assets/',
+    'baseURL' => 'http://mvcshop.local/', 
     'db' => array(
         'host'     => 'localhost',
         'name'     => 'ProductDB',
